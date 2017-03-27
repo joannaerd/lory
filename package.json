@@ -1,5 +1,6 @@
 {
   "name": "lory.js",
+  "version": "2.0.0",
   "description": "Touch enabled minimalistic slider written in vanilla JavaScript.",
   "author": {
     "name": "Maximilian Heinz",
