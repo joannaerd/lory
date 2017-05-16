@@ -88,6 +88,12 @@ export default {
     window: window,
 
     /**
+     * Enables slider reset on window resize.
+     * @resetOnResize {boolean}
+     */
+    resetOnResize: true,
+
+    /**
      * If false, slides lory to the first slide on window resize.
      * @rewindOnResize {boolean}
      */
