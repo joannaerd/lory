@@ -304,6 +304,11 @@ li {
         <td>class name for slider next control</td>
         <td>default: 'js_next'</td>
     </tr>
+    <tr>
+        <td>resetOnResize</td>
+        <td>enable reset on window resize</td>
+        <td>default: true</td>
+    </tr>
 </table>
 
 ## Events

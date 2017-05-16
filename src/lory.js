@@ -2,9 +2,11 @@
 
 import detectPrefixes from './utils/detect-prefixes.js';
 import dispatchEvent from './utils/dispatch-event.js';
+import isMobile from './utils/detect-mobile.js';
 import defaults from './defaults.js';
 
 const slice = Array.prototype.slice;
+const resizeEvent = (isMobile) ? 'orientationchange' : 'resize';
 
 export function lory (slider, opts) {
     let position;
@@ -265,7 +267,9 @@ export function lory (slider, opts) {
             frame.addEventListener('click', onClick);
         }
 
-        options.window.addEventListener('resize', onResize);
+        if (options.resetOnResize) {
+            options.window.addEventListener(resizeEvent, onResize);
+        }
 
         dispatchSliderEvent('after', 'init');
     }
@@ -360,7 +364,7 @@ export function lory (slider, opts) {
         frame.removeEventListener('mouseleave', onTouchend);
         frame.removeEventListener('click', onClick);
 
-        options.window.removeEventListener('resize', onResize);
+        options.window.removeEventListener(resizeEvent, onResize);
 
         if (prevCtrl) {
             prevCtrl.removeEventListener('click', prev);
